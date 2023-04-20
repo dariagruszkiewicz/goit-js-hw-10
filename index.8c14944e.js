@@ -1,2 +1,0 @@
-function t(){return fetch("https://restcountries.com/v3.1/all").then((t=>{if(!t.ok)throw new Error(t.status);return t.json()}))}const n=document.getElementById("search-box"),e=document.querySelector(".country-list");n.addEventListener("input",(()=>{t().then((t=>function(t){const n=t.map((t=>`<li>\n          <p><b>Country name</b>: ${t.name.official}</p>\n          <img width="100" src="${t.flags.svg}" alt="${t.flags.alt}"/>`)).join("");e.innerHTML=n}(t))).catch((t=>console.log(t)))})),console.log(t());
-//# sourceMappingURL=index.8c14944e.js.map
