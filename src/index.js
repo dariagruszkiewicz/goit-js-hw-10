@@ -32,7 +32,8 @@ inputEl.addEventListener(
 );
 
 inputEl.addEventListener('keydown', ev => {
-  if (ev.key === 'Backspace') {
+  const countryName = ev.target.value.trim();
+  if (ev.key === 'Backspace' && countryName === '') {
     countryListEl.innerHTML = '';
     countryInfo.innerHTML = '';
     return;
