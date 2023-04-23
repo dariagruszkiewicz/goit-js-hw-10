@@ -1,5 +1,6 @@
 const API_URL = 'https://restcountries.com/v3.1/name';
 import { Notify } from 'notiflix';
+import { countryInfo, countryListEl } from '.';
 
 export const fetchCountries = name => {
   return fetch(
@@ -7,6 +8,8 @@ export const fetchCountries = name => {
   ).then(response => {
     if (!response.ok) {
       Notify.failure('Oops, there is no country with that name');
+      countryInfo.innerHTML = '';
+      countryListEl.innerHTML = '';
     }
     return response.json();
   });

@@ -11,8 +11,8 @@ Notify.init({
 
 const DEBOUNCE_DELAY = 300;
 const inputEl = document.getElementById('search-box');
-const countryListEl = document.querySelector('.country-list');
-const countryInfo = document.querySelector('.country-info');
+export const countryListEl = document.querySelector('.country-list');
+export const countryInfo = document.querySelector('.country-info');
 
 inputEl.addEventListener(
   'input',
