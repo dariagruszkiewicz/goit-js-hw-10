@@ -19,12 +19,6 @@ inputEl.addEventListener(
   debounce(ev => {
     const countryName = ev.target.value.trim();
 
-    if (countryName === '') {
-      countryListEl.innerHTML = '';
-      countryInfo.innerHTML = '';
-      return;
-    }
-
     fetchCountries(countryName)
       .then(countries => renderCountryList(countries))
       .catch(error => console.log(error));
