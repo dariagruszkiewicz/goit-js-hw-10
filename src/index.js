@@ -31,6 +31,14 @@ inputEl.addEventListener(
   }, DEBOUNCE_DELAY)
 );
 
+inputEl.addEventListener('keydown', ev => {
+  if (ev.key === 'Backspace') {
+    countryListEl.innerHTML = '';
+    countryInfo.innerHTML = '';
+    return;
+  }
+});
+
 function renderCountryList(countries) {
   if (countries.length > 10) {
     Notify.info('Too many matches found. Please enter a more specific name.');
